@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beauty Tips</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f8f2;
+      color: #203b17;
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 90vh;
+      background: linear-gradient(rgba(255,255,255,0.72), rgba(255,255,255,0.72)),
+                  url("https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 50px 8%;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.92);
+      padding: 15px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #27600f;
+    }
+
+    nav a {
+      color: #27600f;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      margin-top: 60px;
+    }
+
+    .hero-content h1 {
+      font-family: Georgia, serif;
+      font-size: 70px;
+      color: #24570d;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #27600f;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .button:hover {
+      background-color: #173d08;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 35px;
+      color: #27600f;
+      font-family: Georgia, serif;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .card h3 {
+      color: #27600f;
+      margin-bottom: 12px;
+    }
+
+    .quiz-box {
+      max-width: 650px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    label {
+      display: block;
+      margin-top: 18px;
+      font-weight: bold;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #b7c7ad;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+
+    #result {
+      margin-top: 25px;
+      padding: 20px;
+      background-color: #eef5e9;
+      border-left: 5px solid #27600f;
+      border-radius: 10px;
+      display: none;
+    }
+
+    #result h3 {
+      color: #27600f;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: #27600f;
+      color: white;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 8px;
+      }
+
+      .hero-content h1 {
+        font-size: 48px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Beauty Tips</div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#routine">Routine</a>
+      <a href="#quiz">Skin Quiz</a>
+      <a href="#tips">Tips</a>
+    </div>
+  </nav>
+
+  <header id="home">
+    <div class="hero-content">
+      <h1>Beauty<br>Skincare</h1>
+      <p>Simple skincare routines and product ideas based on your skin type and main concern.</p>
+      <a href="#quiz" class="button">Start Skin Quiz</a>
+    </div>
+  </header>
+
+  <section id="routine">
+    <h2 class="section-title">Basic Skincare Routine</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>1. Cleanser</h3>
+        <p>Use a gentle cleanser to remove oil, dirt, and makeup without making your skin feel too dry.</p>
+      </div>
+      <div class="card">
+        <h3>2. Moisturizer</h3>
+        <p>A moisturizer helps protect your skin barrier and keeps your face soft and hydrated.</p>
+      </div>
+      <div class="card">
+        <h3>3. Sunscreen</h3>
+        <p>Sunscreen is important every morning, especially if you have acne scars or dark spots.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="quiz">
+    <h2 class="section-title">Find Your Routine</h2>
+    <div class="quiz-box">
+      <label for="skinType">What is your skin type?</label>
+      <select id="skinType">
+        <option value="">Choose one</option>
+        <option value="oily">Oily</option>
+        <option value="dry">Dry</option>
+        <option value="combination">Combination</option>
+        <option value="sensitive">Sensitive</option>
+      </select>
+
+      <label for="concern">What is your main skin concern?</label>
+      <select id="concern">
+        <option value="">Choose one</option>
+        <option value="acne">Acne</option>
+        <option value="scars">Acne scars / dark spots</option>
+        <option value="dryness">Dryness</option>
+        <option value="texture">Texture</option>
+      </select>
+
+      <br><br>
+      <button class="button" onclick="showRoutine()">Get Recommendation</button>
+
+      <div id="result"></div>
+    </div>
+  </section>
+
+  <section id="products">
+    <h2 class="section-title">Product Recommendations</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>For Oily or Acne-Prone Skin</h3>
+        <p><strong>Cleanser:</strong> CeraVe Foaming Facial Cleanser</p>
+        <p><strong>Moisturizer:</strong> Neutrogena Hydro Boost Water Gel</p>
+        <p><strong>Sunscreen:</strong> La Roche-Posay Anthelios Clear Skin SPF 60</p>
+      </div>
+      <div class="card">
+        <h3>For Dry Skin</h3>
+        <p><strong>Cleanser:</strong> La Roche-Posay Hydrating Gentle Cleanser</p>
+        <p><strong>Moisturizer:</strong> CeraVe Moisturizing Cream</p>
+        <p><strong>Sunscreen:</strong> Beauty of Joseon Relief Sun SPF 50</p>
+      </div>
+      <div class="card">
+        <h3>For Dark Spots or Acne Scars</h3>
+        <p><strong>Serum:</strong> The Ordinary Niacinamide 10% + Zinc 1%</p>
+        <p><strong>Treatment:</strong> Good Molecules Discoloration Correcting Serum</p>
+        <p><strong>Sunscreen:</strong> Skin1004 Hyalu-Cica Water-Fit Sun Serum SPF 50</p>
+      </div>
+      <div class="card">
+        <h3>For Sensitive Skin</h3>
+        <p><strong>Cleanser:</strong> Vanicream Gentle Facial Cleanser</p>
+        <p><strong>Moisturizer:</strong> Aveeno Calm + Restore Oat Gel Moisturizer</p>
+        <p><strong>Sunscreen:</strong> Blue Lizard Sensitive Mineral Sunscreen</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tips">
+    <h2 class="section-title">Skincare Tips</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Be Consistent</h3>
+        <p>Skincare takes time. Try to follow your routine for a few weeks before judging the results.</p>
+      </div>
+      <div class="card">
+        <h3>Do Not Overdo It</h3>
+        <p>Using too many strong products at once can irritate your skin and make concerns worse.</p>
+      </div>
+      <div class="card">
+        <h3>Patch Test</h3>
+        <p>Test new products on a small area first, especially if your skin is sensitive.</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <script>
+    function showRoutine() {
+      let skinType = document.getElementById("skinType").value;
+      let concern = document.getElementById("concern").value;
+      let result = document.getElementById("result");
+
+      if (skinType === "" || concern === "") {
+        result.style.display = "block";
+        result.innerHTML = "<h3>Please choose both options.</h3><p>Select your skin type and your main concern to get a routine.</p>";
+        return;
+      }
+
+      let routine = "";
+
+      if (skinType === "oily") {
+        routine += "Use a gel cleanser, a lightweight moisturizer, and an oil-free sunscreen. ";
+      } else if (skinType === "dry") {
+        routine += "Use a creamy cleanser, a rich moisturizer, and a hydrating sunscreen. ";
+      } else if (skinType === "combination") {
+        routine += "Use a gentle cleanser, a balanced moisturizer, and sunscreen every morning. ";
+      } else if (skinType === "sensitive") {
+        routine += "Use fragrance-free products and keep your routine simple to avoid irritation. ";
+      }
+
+      if (concern === "acne") {
+        routine += "For acne, look for ingredients like salicylic acid or benzoyl peroxide, but start slowly.";
+      } else if (concern === "scars") {
+        routine += "For acne scars or dark spots, sunscreen is very important. Ingredients like niacinamide or vitamin C may also help over time.";
+      } else if (concern === "dryness") {
+        routine += "For dryness, focus on hydration and ingredients like hyaluronic acid or ceramides.";
+      } else if (concern === "texture") {
+        routine += "For texture, gentle exfoliation can help, but avoid using exfoliating products every day.";
+      }
+
+      result.style.display = "block";
+      result.innerHTML = "<h3>Your Recommended Routine</h3><p>" + routine + "</p>";
+    }
+  </script>
+</body>
+</html>
